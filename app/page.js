@@ -1,95 +1,150 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+// import { client } from "@/sanity/lib/client"
+
+// async function getData() {
+//   let fetchData = await client.fetch(`*[_type == 'student']`)
+//   return fetchData;
+// }
+
+// export default async function Home() {
+//   let data = await getData();
+//   console.log("data", data)
+//   return (
+//     <>
+//       {
+//         data.map((val) => {
+//           return (
+//             <>
+//               <div key={val.studentID}>
+//                 <h1>{val.name}</h1>
+//                 <h1>{val.age}</h1>
+//                 <h1>{val.rollnumber}</h1>
+//                 <h1>{val.text}</h1>
+//               </div>
+//             </>
+//           )
+//         })
+
+
+//       }
+//     </>
+//   )
+// }
+
+
+
+// "use client"
+// import { client } from "@/sanity/lib/client"
+// import { useState, useEffect } from 'react';
+
+// async function getData() {
+//   let fetchData = await client.fetch(`*[_type == 'teacher']`)
+//   return fetchData;
+// }
+
+// export default function Home() {
+//   const [data, setData] = useState([]);
+
+//   useEffect(() => {
+//     async function fetchData() {
+//       const result = await getData();
+//       setData(result);
+//     }
+
+//     fetchData();
+//   }, []);
+
+//   return (
+//     <>
+//       {
+//         data.map((val) => {
+//           return (
+//             <div key={val.studentID}>
+//               <h1>{val.name}</h1>
+//               <h1>{val.age}</h1>
+//               <h1>{val.rollnumber}</h1>
+//               <h1>{val.text}</h1>
+              
+//             </div>
+//           )
+//         })
+//       }
+//     </>
+//   )
+// }
+
+
+"use client"
+import { client } from "@/sanity/lib/client"
+import { useState, useEffect } from 'react';
+
+async function getData() {
+  let fetchData = await client.fetch(`*[_type == 'teacher']`)
+  return fetchData;
+}
 
 export default function Home() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const result = await getData();
+      setData(result);
+    }
+
+    fetchData();
+  }, []);
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+
+<nav className="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div className="container">
+          <a className="navbar-brand" href="index.html">Muhammad Ahmad</a>
+          <button className="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="oi oi-menu" /> Menu
+          </button>
+          <div className="collapse navbar-collapse" id="ftco-nav">
+            <ul className="navbar-nav nav ml-auto">
+              <li className="nav-item"><a href="#home-section" className="nav-link"><span>Home</span></a></li>
+              <li className="nav-item"><a href="#about-section" className="nav-link"><span>About</span></a></li>
+              <li className="nav-item"><a href="#resume-section" className="nav-link"><span>Resume</span></a></li>
+              <li className="nav-item"><a href="#services-section" className="nav-link"><span>Services</span></a></li>
+              <li className="nav-item"><a href="#skills-section" className="nav-link"><span>Skills</span></a></li>
+              <li className="nav-item"><a href="#projects-section" className="nav-link"><span>Projects</span></a></li>
+              <li className="nav-item"><a href="#blog-section" className="nav-link"><span>My Blog</span></a></li>
+              <li className="nav-item"><a href="#contact-section" className="nav-link"><span>Contact</span></a></li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </nav>
+  
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+
+      {/* {
+        data.map((val) => {
+          return (
+            <div key={val._id}>
+              <h1>{val.name}</h1>
+              <h1>{val.age}</h1>
+              <h1>{val.rollnumber}</h1>
+              <h1>{val.text}</h1>
+              {
+                val.image && (
+                  <img src={val.image.asset.url} alt="Teacher Image" />
+                )
+              }
+            </div>
+          )
+        })
+      } */}
+
+
+      
+    </>
   )
 }
+
